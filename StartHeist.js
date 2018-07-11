@@ -6,23 +6,14 @@ import {connect} from 'react-redux'
 
 class StartHeist extends React.Component {
 
-  // constructor(props) {
-  //   super(props)
-  //   console.log("constructor props", props)
-  //   this.state = props.props
-  // }
-
   componentWillMount() {
-    // console.debug("Props in StartHeist after componentWillMount", this.props)
     this.props.initTimer()
   }
 
   componentDidMount() {
-    // console.debug("Props in StartHeist", this.props)
   }
 
   handleStartStop() {
-    console.debug("Handling START/STOP")
     // case 1 - stop button clicked
     if (this.props.timer.running) {
       clearInterval(this.interval)
@@ -32,11 +23,9 @@ class StartHeist extends React.Component {
       return
     }
     if (this.props.timer.paused){
-      console.debug("Continuing")
       this.props.continueTimer()
       // this.setState({timer: {labelHeist: "RUNNING"}})
     } else {
-      console.debug("STARTING")
       // case 2 - start button clicked
       // this.setState({timer: {labelHeist: "RUNNING"}})
       this.props.startTimer()
@@ -45,7 +34,6 @@ class StartHeist extends React.Component {
 
     this.interval = setInterval(() => {
       if (!this.props.timer.running){
-        console.debug("NOT RUNNING")
         clearInterval(this.interval)
         return
       }
@@ -53,21 +41,7 @@ class StartHeist extends React.Component {
     }, 1000)
   }
 
-  getLabel(){
-    console.log("Timer props", this.props.timer)
-    // console.log("PAUSED?", this.props.timer.paused)
-    if (this.props.timer.paused){
-      return "PAUSED"
-    } else if (this.props.timer.running){
-      return "RUNNING"
-    } else {
-      return "START HEIST"
-    }
-  }
-
   render() {
-    console.log("GOT PROPS: ", this.props)
-
     return (
         <View style={styles.buttonWrapper}>
           <Button
@@ -95,7 +69,6 @@ const styles = StyleSheet.create({
 
 
 function mapStateToProps(state) {
-  console.log("map state to props", state)
   return {
     timer: state.timer,
     heist: state.heist
