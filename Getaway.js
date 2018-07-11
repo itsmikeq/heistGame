@@ -7,6 +7,7 @@ import {connect} from 'react-redux'
 class Getaway extends React.Component {
 
   componentWillMount() {
+    console.log(this.props)
     this.props.initTimer()
   }
 
@@ -18,17 +19,17 @@ class Getaway extends React.Component {
     if (this.props.timer.running) {
       clearInterval(this.interval)
       // should be in an action...
-      this.props.pauseTimer()
+      this.props.pauseTimer('GETAWAY')
       // this.setState({timer: {labelHeist: "PAUSED"}})
       return
     }
     if (this.props.timer.paused){
-      this.props.continueTimer()
+      this.props.continueTimer('GETAWAY')
       // this.setState({timer: {labelHeist: "RUNNING"}})
     } else {
       // case 2 - start button clicked
       // this.setState({timer: {labelHeist: "RUNNING"}})
-      this.props.startTimer()
+      this.props.startTimer('GETAWAY')
       this.props.timerTick()
     }
 
@@ -48,8 +49,8 @@ class Getaway extends React.Component {
               onPress={this.handleStartStop.bind(this)}
               style={{width: 370}}
               borderRadius={10}
-              title="heist button"
-              label={this.props.heist.label}
+              title="getaway button"
+              label={this.props.getaway.label}
               color="#1D292F"
           />
         </View>
@@ -71,15 +72,15 @@ const styles = StyleSheet.create({
 function mapStateToProps(state) {
   return {
     timer: state.timer,
-    heist: state.heist
+    getaway: state.getaway
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    initTimer: () => dispatch(initTimer()),
+    initTimer: () => dispatch(initTimer('GETAWAY')),
     startTimer: () => {
-      dispatch(startTimer())
+      dispatch(startTimer('GETAWAY'))
     },
     timerTick: () => {
       dispatch(timerTick())
@@ -88,10 +89,10 @@ function mapDispatchToProps(dispatch) {
       dispatch(timerStop())
     },
     pauseTimer: () => {
-      dispatch(pauseTimer())
+      dispatch(pauseTimer('GETAWAY'))
     },
     continueTimer: () => {
-      dispatch(continueTimer())
+      dispatch(continueTimer('GETAWAY'))
     },
   }
 }

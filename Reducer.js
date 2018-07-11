@@ -29,7 +29,8 @@ const initialState = {
     pausedAt: null,
     complete: false
   },
-  heist: {label: "START"},
+  heist: {label: "START HEIST"},
+  getaway: {label: "START GETAWAY"},
   loading: false,
   phase: null,
 }
@@ -61,6 +62,8 @@ function timerSounds(timeCode) {
 export default function reducer(state = initialState, action) {
   const now = new Date()
   const tenMinutes = moment(now).add(1, 'm')
+  const startGetawayLabel = "START GETAWAY"
+  const startHeistLabel = "START HEIST"
   switch (action.type) {
     case START_GETAWAY:
       return {
@@ -72,10 +75,14 @@ export default function reducer(state = initialState, action) {
     case TIMER_RUNNING:
       return {...state}
     case TIMER_PAUSE:
+      if (action.phase === 'HEIST') {
+        state = Object.assign(state, {heist: {label: "RESUME"}})
+      } else if (action.phase === 'GETAWAY') {
+        state = Object.assign(state, {getaway: {label: "RESUME"}})
+      }
       return {
         ...state,
-        timer: Object.assign(state.timer, {running: false, paused: true, pausedAt: new Date()}),
-        heist: {label: "RESUME"}
+        timer: Object.assign(state.timer, {running: false, paused: true, pausedAt: new Date()})
       }
     case TIMER_STOP:
       return {...state, timer: Object.assign(state.timer, {running: false})}
@@ -85,6 +92,11 @@ export default function reducer(state = initialState, action) {
       let d = moment.duration(t)
       let newRunUntil = moment(state.timer.runUntil).add(d, 's')
       let newStartedAt = moment(state.timer.startedAt).add(d, 's')
+      if (action.phase === 'HEIST') {
+        state = Object.assign(state, {heist: {label: "PAUSE"}})
+      } else if (action.phase === 'GETAWAY') {
+        state = Object.assign(state, {getaway: {label: "PAUSE"}})
+      }
       return {
         ...state,
         timer: {
@@ -93,8 +105,7 @@ export default function reducer(state = initialState, action) {
           startedAt: newStartedAt,
           timeRemaining: calculateDate(newRunUntil, newStartedAt),
           runUntil: newRunUntil,
-        }, startCountdownPressed: true,
-        heist: {label: "PAUSE"}
+        }, startCountdownPressed: true
       }
     case TIMER_TICK:
       // Remaining is what is used to display the remaining time
@@ -122,12 +133,22 @@ export default function reducer(state = initialState, action) {
           startedAt: now,
           timeRemaining: calculateDate(tenMinutes, now),
           runUntil: tenMinutes,
-        }), heist: {label: "START HEIST"},
-        phase: null
+        }), heist: {label: startHeistLabel},
+        getaway: {label: startGetawayLabel},
+        phase: 'HEIST'
       }
     case
     TIMER_START:
       console.debug("Starting timer")
+      if (action.phase === 'HEIST') {
+        state = Object.assign(state, {heist: {label: "PAUSE"}})
+      } else if (action.phase === 'GETAWAY') {
+        state = Object.assign(state, {getaway: {label: "PAUSE"}})
+      }
+      // going from heist to getaway
+      if (state.phase === 'HEIST' && action.phase === 'GETAWAY') {
+
+      }
       return {
         ...state, timer: {
           running: true,
@@ -135,7 +156,7 @@ export default function reducer(state = initialState, action) {
           timeRemaining: calculateDate(tenMinutes, now),
           runUntil: tenMinutes,
         }, startCountdownPressed: true,
-        heist: {label: "PAUSE"}
+        phase: action.phase
       }
     default:
       return {
@@ -171,24 +192,27 @@ export function initTimer() {
   }
 }
 
-export function continueTimer() {
+export function continueTimer(phase = null) {
   return {
     type: TIMER_CONTINUE,
+    phase: phase
   }
 }
 
 
-export function startTimer() {
+export function startTimer(phase = null) {
   console.debug("start timer")
   return {
     type: TIMER_START,
+    phase: phase
   }
 }
 
-export function pauseTimer() {
+export function pauseTimer(phase = null) {
   console.debug("paused timer")
   return {
     type: TIMER_PAUSE,
+    phase: phase
   }
 }
 

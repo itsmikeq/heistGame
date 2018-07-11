@@ -79,7 +79,7 @@ function mapDispatchToProps(dispatch) {
   return {
     initTimer: () => dispatch(initTimer()),
     startTimer: () => {
-      dispatch(startTimer())
+      dispatch(startTimer('HEIST'))
     },
     timerTick: () => {
       dispatch(timerTick())
@@ -88,10 +88,10 @@ function mapDispatchToProps(dispatch) {
       dispatch(timerStop())
     },
     pauseTimer: () => {
-      dispatch(pauseTimer())
+      dispatch(pauseTimer('HEIST'))
     },
     continueTimer: () => {
-      dispatch(continueTimer())
+      dispatch(continueTimer('HEIST'))
     },
   }
 }
