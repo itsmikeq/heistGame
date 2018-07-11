@@ -1,5 +1,6 @@
 import Moment from 'react-moment'
 import moment from 'moment'
+import split from 'lodash/split'
 
 
 export const START_GETAWAY = 'heist-game/app/START_GETAWAY'
@@ -26,10 +27,11 @@ const initialState = {
     timeRemaining: moment(new Date()).add(10, 'm'),
     runUntil: moment(new Date()).add(10, 'm'),
     pausedAt: null,
-    complete: false,
+    complete: false
   },
   heist: {label: "START"},
-  loading: false
+  loading: false,
+  phase: null,
 }
 
 export function calculateDate(futureDate = new Date(), currentDate = new Date()) {
@@ -37,12 +39,34 @@ export function calculateDate(futureDate = new Date(), currentDate = new Date())
   return formattedDate.format('mm:ss')
 }
 
+function timerSounds(timeCode) {
+  switch (timeCode) {
+    case "00:60":
+      console.log("6 minutes left")
+      return
+    case "00:50":
+      console.log("5 minutes left")
+      return
+    case "00:40":
+      console.log("4 minutes left")
+      return
+    case "00:20":
+      console.log("2 minutes left")
+      return
+    default:
+      return
+  }
+}
+
 export default function reducer(state = initialState, action) {
   const now = new Date()
   const tenMinutes = moment(now).add(1, 'm')
   switch (action.type) {
     case START_GETAWAY:
-      return {...state, loading: true}
+      return {
+        ...state,
+        phase: 'GETAWAY'
+      }
     case START_GETAWAY_SUCCESS:
       return {...state}
     case TIMER_RUNNING:
@@ -73,8 +97,10 @@ export default function reducer(state = initialState, action) {
         heist: {label: "PAUSE"}
       }
     case TIMER_TICK:
+      // Remaining is what is used to display the remaining time
       const remaining = calculateDate(state.timer.runUntil, now)
-      console.debug("Remaining", remaining)
+      console.log("Remaining", remaining)
+      timerSounds(remaining)
       if (state.timer.runUntil >= now) {
         return {
           ...state, timer: Object.assign(state.timer, {timeRemaining: remaining})
@@ -96,7 +122,8 @@ export default function reducer(state = initialState, action) {
           startedAt: now,
           timeRemaining: calculateDate(tenMinutes, now),
           runUntil: tenMinutes,
-        }), heist: {label: "START HEIST"}
+        }), heist: {label: "START HEIST"},
+        phase: null
       }
     case
     TIMER_START:
@@ -136,6 +163,7 @@ export function timerReset() {
   }
 }
 
+// load the sounds here, so they're available when we need then
 export function initTimer() {
   console.debug("initted timer")
   return {

@@ -6,7 +6,8 @@ import { Provider, connect } from 'react-redux';
 import reducer from './Reducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import Clock from './Clock'
-import StartHeist from './StartHeist';
+import Heist from './Heist';
+import Getaway from './Getaway';
 import Reset from './Reset';
 
 // const store = {}
@@ -21,8 +22,9 @@ export default class App extends React.Component {
     return (
       <Provider store={store}>
       <View style={styles.container}>
-          <StartHeist store={store}/>
+          <Heist store={store}/>
           <Clock store={store}/>
+          <Getaway store={store}/>
         <Reset store={store}/>
 
       </View>

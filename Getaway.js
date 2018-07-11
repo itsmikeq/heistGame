@@ -4,58 +4,41 @@ import {Button} from 'react-native-common'
 import {initTimer, startTimer, pauseTimer, continueTimer, timerTick, timerStop} from './Reducer'
 import {connect} from 'react-redux'
 
-class StartGetaway extends React.Component {
-
-  constructor(props) {
-    super(props)
-  }
+class Getaway extends React.Component {
 
   componentWillMount() {
-    // console.debug("Props in StartHeist after componentWillMount", this.props)
     this.props.initTimer()
   }
 
   componentDidMount() {
-    // console.debug("Props in StartHeist", this.props)
   }
 
   handleStartStop() {
-    console.debug("Handling START/STOP")
     // case 1 - stop button clicked
     if (this.props.timer.running) {
       clearInterval(this.interval)
       // should be in an action...
       this.props.pauseTimer()
+      // this.setState({timer: {labelHeist: "PAUSED"}})
       return
     }
     if (this.props.timer.paused){
-      console.debug("Continuing")
       this.props.continueTimer()
+      // this.setState({timer: {labelHeist: "RUNNING"}})
     } else {
-      console.debug("STARTING")
       // case 2 - start button clicked
+      // this.setState({timer: {labelHeist: "RUNNING"}})
       this.props.startTimer()
       this.props.timerTick()
     }
 
     this.interval = setInterval(() => {
       if (!this.props.timer.running){
-        console.debug("NOT RUNNING")
         clearInterval(this.interval)
         return
       }
       this.props.timerTick()
     }, 1000)
-  }
-
-  getLabel(){
-    if (this.props.timer.running){
-      return "RUNNING"
-    } else if (this.props.timer.paused){
-      return "PAUSED"
-    } else {
-      return "START HEIST"
-    }
   }
 
   render() {
@@ -66,7 +49,7 @@ class StartGetaway extends React.Component {
               style={{width: 370}}
               borderRadius={10}
               title="heist button"
-              label={this.getLabel()}
+              label={this.props.heist.label}
               color="#1D292F"
           />
         </View>
@@ -86,9 +69,9 @@ const styles = StyleSheet.create({
 
 
 function mapStateToProps(state) {
-  console.debug("STATE.TIMER", state.timer)
   return {
-    timer: state.timer
+    timer: state.timer,
+    heist: state.heist
   }
 }
 
@@ -114,4 +97,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(StartGetaway)
+export default connect(mapStateToProps, mapDispatchToProps)(Getaway)

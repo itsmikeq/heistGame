@@ -4,7 +4,7 @@ import {Button} from 'react-native-common'
 import {initTimer, startTimer, pauseTimer, continueTimer, timerTick, timerStop} from './Reducer'
 import {connect} from 'react-redux'
 
-class StartHeist extends React.Component {
+class Heist extends React.Component {
 
   componentWillMount() {
     this.props.initTimer()
@@ -97,4 +97,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(StartHeist)
+export default connect(mapStateToProps, mapDispatchToProps)(Heist)
