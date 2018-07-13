@@ -1,6 +1,7 @@
 import Moment from 'react-moment'
 import moment from 'moment'
 import split from 'lodash/split'
+import SoundAround from 'SoundAround'
 
 
 export const START_GETAWAY = 'heist-game/app/START_GETAWAY'
@@ -80,6 +81,7 @@ export default function reducer(state = initialState, action) {
       } else if (action.phase === 'GETAWAY') {
         state = Object.assign(state, {getaway: {label: "RESUME"}})
       }
+      soundAround.pause()
       return {
         ...state,
         timer: Object.assign(state.timer, {running: false, paused: true, pausedAt: new Date()})
@@ -149,6 +151,7 @@ export default function reducer(state = initialState, action) {
       if (state.phase === 'HEIST' && action.phase === 'GETAWAY') {
 
       }
+      soundAround.play()
       return {
         ...state, timer: {
           running: true,

@@ -4,7 +4,7 @@ import {Button} from 'react-native-common'
 import {initTimer, startTimer, pauseTimer, continueTimer, timerTick, timerStop} from './Reducer'
 import {connect} from 'react-redux'
 
-class Getaway extends React.Component {
+class Getaway extends Component {
 
   componentWillMount() {
     console.log(this.props)

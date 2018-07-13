@@ -9,6 +9,7 @@ import Clock from './Clock'
 import Heist from './Heist';
 import Getaway from './Getaway';
 import Reset from './Reset';
+import SoundAround from './SoundAround';
 
 // const store = {}
 const store = createStore(reducer);
