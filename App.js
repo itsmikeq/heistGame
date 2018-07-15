@@ -9,7 +9,6 @@ import Clock from './Clock'
 import Heist from './Heist';
 import Getaway from './Getaway';
 import Reset from './Reset';
-import SoundAround from './SoundAround';
 
 // const store = {}
 const store = createStore(reducer);
@@ -19,6 +18,9 @@ function timerReset() {
 }
 
 export default class App extends React.Component {
+  constructor(props){
+    super(props)
+  }
   render() {
     return (
       <Provider store={store}>

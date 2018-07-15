@@ -1,7 +1,6 @@
 import Moment from 'react-moment'
 import moment from 'moment'
-import split from 'lodash/split'
-import SoundAround from 'SoundAround'
+import Sound from 'react-native-sound'
 
 
 export const START_GETAWAY = 'heist-game/app/START_GETAWAY'
@@ -35,6 +34,15 @@ const initialState = {
   loading: false,
   phase: null,
 }
+
+const sound = new Sound('./assets/sounds/bb_king_lucille.mp3', Sound.MAIN_BUNDLE, (error) => {
+  if (error) {
+    console.log('failed to load the sound', error)
+    return null
+  }
+  // loaded successfully
+  console.log('duration in seconds: ' + sound.getDuration() + 'number of channels: ' + sound.getNumberOfChannels())
+})
 
 export function calculateDate(futureDate = new Date(), currentDate = new Date()) {
   const formattedDate = moment(moment(futureDate) - currentDate)
@@ -76,20 +84,23 @@ export default function reducer(state = initialState, action) {
     case TIMER_RUNNING:
       return {...state}
     case TIMER_PAUSE:
+      sound.pause()
       if (action.phase === 'HEIST') {
         state = Object.assign(state, {heist: {label: "RESUME"}})
       } else if (action.phase === 'GETAWAY') {
         state = Object.assign(state, {getaway: {label: "RESUME"}})
       }
-      soundAround.pause()
       return {
         ...state,
         timer: Object.assign(state.timer, {running: false, paused: true, pausedAt: new Date()})
       }
     case TIMER_STOP:
+      sound.stop()
+      sound.release()
       return {...state, timer: Object.assign(state.timer, {running: false})}
     case TIMER_CONTINUE:
       console.debug("CONTINUING FROM REDUCER")
+      sound.play()
       let t = moment(now).diff(state.timer.pausedAt)
       let d = moment.duration(t)
       let newRunUntil = moment(state.timer.runUntil).add(d, 's')
@@ -113,6 +124,8 @@ export default function reducer(state = initialState, action) {
       // Remaining is what is used to display the remaining time
       const remaining = calculateDate(state.timer.runUntil, now)
       console.log("Remaining", remaining)
+      sound.getCurrentTime((seconds) => console.log('at ' + seconds))
+
       timerSounds(remaining)
       if (state.timer.runUntil >= now) {
         return {
@@ -128,6 +141,7 @@ export default function reducer(state = initialState, action) {
     case
     TIMER_RESET:
       console.debug("hit reset")
+      sound.stop()
       return {
         ...state, timer: Object.assign(state.timer, {
           running: false,
@@ -142,6 +156,7 @@ export default function reducer(state = initialState, action) {
     case
     TIMER_START:
       console.debug("Starting timer")
+      sound.play()
       if (action.phase === 'HEIST') {
         state = Object.assign(state, {heist: {label: "PAUSE"}})
       } else if (action.phase === 'GETAWAY') {
@@ -151,7 +166,6 @@ export default function reducer(state = initialState, action) {
       if (state.phase === 'HEIST' && action.phase === 'GETAWAY') {
 
       }
-      soundAround.play()
       return {
         ...state, timer: {
           running: true,
