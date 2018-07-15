@@ -74,16 +74,17 @@ class Getaway extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
   },
   button: {
-    width: 370,
+    width: '100%',
     backgroundColor: '#1D292F',
     borderRadius: 0,
   },
   text: {
     color: '#fff',
     textAlign: 'center',
+    fontSize: 30,
   },
   buttonWrapper: {
     backgroundColor: '#1D292F',

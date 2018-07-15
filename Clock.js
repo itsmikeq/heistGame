@@ -43,7 +43,6 @@ class Clock extends React.Component {
 
 const styles = StyleSheet.create({
   timerWrapper: {
-    backgroundColor: '#ffffff',
     justifyContent: 'center',
     alignSelf: 'center',
   },
@@ -56,6 +55,7 @@ const styles = StyleSheet.create({
     fontSize: 40,
     color: '#ff0325',
     marginLeft: 7,
+    fontWeight: 'bold',
   }
 
 })

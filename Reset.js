@@ -24,12 +24,15 @@ class Reset extends React.Component {
 
   render() {
     return (
-        <View style={styles.buttonWrapper}>
-          <Button
-              onPress={this.reset.bind(this)}
-              style={styles.button}
-              color="#1D292F"
-          ><Text style={styles.text}>RESET</Text></Button>
+        <View style={styles.container}>
+          <View style={styles.buttonWrapper}>
+            <Button
+                onPress={this.reset.bind(this)}
+                style={styles.button}
+            >
+              <Text style={styles.text}>RESET</Text>
+            </Button>
+          </View>
         </View>
     )
   }
@@ -37,20 +40,25 @@ class Reset extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: 40,
-    backgroundColor: '#1D292F',
+    backgroundColor: 'transparent',
   },
   button: {
-    width: 370,
+    width: '100%',
     backgroundColor: '#1D292F',
     borderRadius: 0,
-  },
-  buttonWrapper: {
-    marginTop: 50,
   },
   text: {
     color: '#fff',
     textAlign: 'center',
+    fontSize: 30,
+  },
+  buttonWrapper: {
+    backgroundColor: '#1D292F',
+    height: 70,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 50,
+    flexDirection: 'row',
   },
 })
 

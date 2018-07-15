@@ -22,7 +22,7 @@ class Heist extends React.Component {
       // this.setState({timer: {labelHeist: "PAUSED"}})
       return
     }
-    if (this.props.timer.paused){
+    if (this.props.timer.paused) {
       this.props.continueTimer()
       // this.setState({timer: {labelHeist: "RUNNING"}})
     } else {
@@ -33,7 +33,7 @@ class Heist extends React.Component {
     }
 
     this.interval = setInterval(() => {
-      if (!this.props.timer.running){
+      if (!this.props.timer.running) {
         clearInterval(this.interval)
         return
       }
@@ -43,14 +43,16 @@ class Heist extends React.Component {
 
   render() {
     return (
-        <View style={this.props.heist.disabled ? styles.buttonWrapperDisabled : styles.buttonWrapper}>
-          <Button
-              onPress={this.handleStartStop.bind(this)}
-              style={this.props.heist.disabled ? styles.buttonDisabled : styles.button}
-              disabled={this.props.heist.disabled}
-          >
-            <Text style={styles.text}>{this.props.heist.label}</Text>
-          </Button>
+        <View style={styles.container}>
+          <View style={this.props.heist.disabled ? styles.buttonWrapperDisabled : styles.buttonWrapper}>
+            <Button
+                onPress={this.handleStartStop.bind(this)}
+                style={this.props.heist.disabled ? styles.buttonDisabled : styles.button}
+                disabled={this.props.heist.disabled}
+            >
+              <Text style={styles.text}>{this.props.heist.label}</Text>
+            </Button>
+          </View>
         </View>
     )
   }
@@ -58,21 +60,22 @@ class Heist extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    backgroundColor: 'transparent',
   },
   button: {
-    width: 370,
+    width: '100%',
     backgroundColor: '#1D292F',
     borderRadius: 0,
   },
   buttonDisabled: {
-    width: 370,
+    width: '100%',
     backgroundColor: '#364d58',
     borderRadius: 0,
   },
   text: {
     color: '#fff',
     textAlign: 'center',
+    fontSize: 30,
   },
   buttonWrapper: {
     backgroundColor: '#1D292F',
