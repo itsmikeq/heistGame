@@ -35,7 +35,7 @@ const initialState = {
   phase: null,
 }
 
-const sound = new Sound('./assets/sounds/bb_king_lucille.mp3', Sound.MAIN_BUNDLE, (error) => {
+const sound = new Sound('bb_king_lucille.mp3', Sound.MAIN_BUNDLE, (error) => {
   if (error) {
     console.log('failed to load the sound', error)
     return null

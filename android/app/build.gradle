@@ -138,6 +138,8 @@ android {
 
 dependencies {
     compile project(':react-native-sound')
+    compile project(':react-native-common')
+    compile project(':react-native-audio')
     compile fileTree(dir: "libs", include: ["*.jar"])
     compile "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     compile "com.facebook.react:react-native:+"  // From node_modules

@@ -21,17 +21,11 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		1421D062679042E5A9BBE135 /* libRNSound.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E1F808A5BB4FA89B000892 /* libRNSound.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
-		27273A7920F4568B00B501BD /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 008F07F21AC5B25A0029DE68 /* main.jsbundle */; };
 		275D5A7F20F93CCE0021E0F3 /* bb_king_lucille.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 275D5A7E20F93CCE0021E0F3 /* bb_king_lucille.mp3 */; };
 		275D5A8020F93CCE0021E0F3 /* bb_king_lucille.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 275D5A7E20F93CCE0021E0F3 /* bb_king_lucille.mp3 */; };
 		275D5A8120F93CCE0021E0F3 /* bb_king_lucille.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 275D5A7E20F93CCE0021E0F3 /* bb_king_lucille.mp3 */; };
 		275D5A8220F93CCE0021E0F3 /* bb_king_lucille.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 275D5A7E20F93CCE0021E0F3 /* bb_king_lucille.mp3 */; };
-		275D5A8420F946970021E0F3 /* bb_king_lucille.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 275D5A8320F946970021E0F3 /* bb_king_lucille.mp3 */; };
-		275D5A8520F946970021E0F3 /* bb_king_lucille.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 275D5A8320F946970021E0F3 /* bb_king_lucille.mp3 */; };
-		275D5A8620F946970021E0F3 /* bb_king_lucille.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 275D5A8320F946970021E0F3 /* bb_king_lucille.mp3 */; };
-		275D5A8720F946970021E0F3 /* bb_king_lucille.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 275D5A8320F946970021E0F3 /* bb_king_lucille.mp3 */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -45,9 +39,12 @@
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* heistGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* heistGameTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
+		483570F05B08437089630392 /* libRNCommon.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AE65CC385B9414EB4433997 /* libRNCommon.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		86AC353AEB78424B8815C1B3 /* libRNAudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DCA6CFE71EA4A3CB4A197F4 /* libRNAudio.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
+		DAFD073F980E4573A93690C5 /* libRNSound.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74DC326B186E4646ACB4166B /* libRNSound.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,9 +111,23 @@
 			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
 			remoteInfo = React;
 		};
-		275D5A7720F6763A0021E0F3 /* PBXContainerItemProxy */ = {
+		275D5B2B20FBC6710021E0F3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 80060882749B4959A071A74A /* RNSound.xcodeproj */;
+			containerPortal = 24DEC3AA3C2E46DAAD27E3D0 /* RNAudio.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 42F559BA1CFC90C400DC3F84;
+			remoteInfo = RNAudio;
+		};
+		275D5B2E20FBC6710021E0F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B77426302CEF4CCCAFA16316 /* RNCommon.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNCommon;
+		};
+		275D5B7620FBC7550021E0F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C4660462DB7422488AF987C /* RNSound.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 19825A1E1BD4A89800EE0337;
 			remoteInfo = RNSound;
@@ -334,7 +345,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
 		00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTGeolocation.xcodeproj; path = "../node_modules/react-native/Libraries/Geolocation/RCTGeolocation.xcodeproj"; sourceTree = "<group>"; };
 		00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "../node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
@@ -343,6 +353,7 @@
 		00E356EE1AD99517003FC87E /* heistGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = heistGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* heistGameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = heistGameTests.m; sourceTree = "<group>"; };
+		0AE65CC385B9414EB4433997 /* libRNCommon.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNCommon.a; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* heistGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = heistGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -353,17 +364,19 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = heistGame/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = heistGame/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		24DEC3AA3C2E46DAAD27E3D0 /* RNAudio.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNAudio.xcodeproj; path = "../node_modules/react-native-audio/ios/RNAudio.xcodeproj"; sourceTree = "<group>"; };
 		275D5A7E20F93CCE0021E0F3 /* bb_king_lucille.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bb_king_lucille.mp3; sourceTree = "<group>"; };
-		275D5A8320F946970021E0F3 /* bb_king_lucille.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = bb_king_lucille.mp3; path = ../../../Downloads/bb_king_lucille.mp3; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* heistGame-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "heistGame-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* heistGame-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "heistGame-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DCA6CFE71EA4A3CB4A197F4 /* libRNAudio.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNAudio.a; sourceTree = "<group>"; };
+		5C4660462DB7422488AF987C /* RNSound.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSound.xcodeproj; path = "../node_modules/react-native-sound/RNSound.xcodeproj"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
-		68E1F808A5BB4FA89B000892 /* libRNSound.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSound.a; sourceTree = "<group>"; };
+		74DC326B186E4646ACB4166B /* libRNSound.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNSound.a; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
-		80060882749B4959A071A74A /* RNSound.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNSound.xcodeproj; path = "../node_modules/react-native-sound/RNSound.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
+		B77426302CEF4CCCAFA16316 /* RNCommon.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNCommon.xcodeproj; path = "../node_modules/react-native-common/ios/RNCommon.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -392,7 +405,9 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				1421D062679042E5A9BBE135 /* libRNSound.a in Frameworks */,
+				86AC353AEB78424B8815C1B3 /* libRNAudio.a in Frameworks */,
+				483570F05B08437089630392 /* libRNCommon.a in Frameworks */,
+				DAFD073F980E4573A93690C5 /* libRNSound.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,7 +520,6 @@
 			isa = PBXGroup;
 			children = (
 				275D5A7E20F93CCE0021E0F3 /* bb_king_lucille.mp3 */,
-				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -542,16 +556,33 @@
 		275D5A4E20F676350021E0F3 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				275D5A8320F946970021E0F3 /* bb_king_lucille.mp3 */,
-				68E1F808A5BB4FA89B000892 /* libRNSound.a */,
+				4DCA6CFE71EA4A3CB4A197F4 /* libRNAudio.a */,
+				0AE65CC385B9414EB4433997 /* libRNCommon.a */,
+				74DC326B186E4646ACB4166B /* libRNSound.a */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		275D5A7420F676380021E0F3 /* Products */ = {
+		275D5B2620FBC6710021E0F3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				275D5A7820F6763A0021E0F3 /* libRNSound.a */,
+				275D5B2C20FBC6710021E0F3 /* libRNAudio.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		275D5B2820FBC6710021E0F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				275D5B2F20FBC6710021E0F3 /* libRNCommon.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		275D5B7320FBC7550021E0F3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				275D5B7720FBC7550021E0F3 /* libRNSound.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -597,7 +628,9 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				80060882749B4959A071A74A /* RNSound.xcodeproj */,
+				24DEC3AA3C2E46DAAD27E3D0 /* RNAudio.xcodeproj */,
+				B77426302CEF4CCCAFA16316 /* RNCommon.xcodeproj */,
+				5C4660462DB7422488AF987C /* RNSound.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -806,8 +839,16 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
-					ProductGroup = 275D5A7420F676380021E0F3 /* Products */;
-					ProjectRef = 80060882749B4959A071A74A /* RNSound.xcodeproj */;
+					ProductGroup = 275D5B2620FBC6710021E0F3 /* Products */;
+					ProjectRef = 24DEC3AA3C2E46DAAD27E3D0 /* RNAudio.xcodeproj */;
+				},
+				{
+					ProductGroup = 275D5B2820FBC6710021E0F3 /* Products */;
+					ProjectRef = B77426302CEF4CCCAFA16316 /* RNCommon.xcodeproj */;
+				},
+				{
+					ProductGroup = 275D5B7320FBC7550021E0F3 /* Products */;
+					ProjectRef = 5C4660462DB7422488AF987C /* RNSound.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -877,11 +918,25 @@
 			remoteRef = 146834031AC3E56700842450 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		275D5A7820F6763A0021E0F3 /* libRNSound.a */ = {
+		275D5B2C20FBC6710021E0F3 /* libRNAudio.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNAudio.a;
+			remoteRef = 275D5B2B20FBC6710021E0F3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		275D5B2F20FBC6710021E0F3 /* libRNCommon.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNCommon.a;
+			remoteRef = 275D5B2E20FBC6710021E0F3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		275D5B7720FBC7550021E0F3 /* libRNSound.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libRNSound.a;
-			remoteRef = 275D5A7720F6763A0021E0F3 /* PBXContainerItemProxy */;
+			remoteRef = 275D5B7620FBC7550021E0F3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		2D16E6721FA4F8DC00B85C8A /* libRCTBlob-tvOS.a */ = {
@@ -1094,7 +1149,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				275D5A8520F946970021E0F3 /* bb_king_lucille.mp3 in Resources */,
 				275D5A8020F93CCE0021E0F3 /* bb_king_lucille.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1103,10 +1157,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27273A7920F4568B00B501BD /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				275D5A7F20F93CCE0021E0F3 /* bb_king_lucille.mp3 in Resources */,
-				275D5A8420F946970021E0F3 /* bb_king_lucille.mp3 in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1115,7 +1167,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				275D5A8620F946970021E0F3 /* bb_king_lucille.mp3 in Resources */,
 				275D5A8120F93CCE0021E0F3 /* bb_king_lucille.mp3 in Resources */,
 				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
 			);
@@ -1125,7 +1176,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				275D5A8720F946970021E0F3 /* bb_king_lucille.mp3 in Resources */,
 				275D5A8220F93CCE0021E0F3 /* bb_king_lucille.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1236,12 +1286,17 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-audio/ios",
+					"$(SRCROOT)/../node_modules/react-native-common/ios/reactnativecommon/**",
 					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
 				);
 				INFOPLIST_FILE = heistGameTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1258,12 +1313,17 @@
 				COPY_PHASE_STRIP = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-audio/ios",
+					"$(SRCROOT)/../node_modules/react-native-common/ios/reactnativecommon/**",
 					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
 				);
 				INFOPLIST_FILE = heistGameTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1281,6 +1341,8 @@
 				DEAD_CODE_STRIPPING = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-audio/ios",
+					"$(SRCROOT)/../node_modules/react-native-common/ios/reactnativecommon/**",
 					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
 				);
 				INFOPLIST_FILE = heistGame/Info.plist;
@@ -1302,6 +1364,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-audio/ios",
+					"$(SRCROOT)/../node_modules/react-native-common/ios/reactnativecommon/**",
 					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
 				);
 				INFOPLIST_FILE = heistGame/Info.plist;
@@ -1330,11 +1394,16 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-audio/ios",
+					"$(SRCROOT)/../node_modules/react-native-common/ios/reactnativecommon/**",
 					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
 				);
 				INFOPLIST_FILE = "heistGame-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1361,11 +1430,16 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-audio/ios",
+					"$(SRCROOT)/../node_modules/react-native-common/ios/reactnativecommon/**",
 					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
 				);
 				INFOPLIST_FILE = "heistGame-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1391,11 +1465,16 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-audio/ios",
+					"$(SRCROOT)/../node_modules/react-native-common/ios/reactnativecommon/**",
 					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
 				);
 				INFOPLIST_FILE = "heistGame-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
@@ -1421,11 +1500,16 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-audio/ios",
+					"$(SRCROOT)/../node_modules/react-native-common/ios/reactnativecommon/**",
 					"$(SRCROOT)/../node_modules/react-native-sound/RNSound",
 				);
 				INFOPLIST_FILE = "heistGame-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-lc++",
