@@ -16,6 +16,7 @@ export const TIMER_CONTINUE = 'heist-game/app/TIMER_CONTINUE'
 export const STORE_TIME = 'heist-game/app/STORE_TIME'
 export const TIMER_TICK = 'heist-game/app/TIMER_TICK'
 export const TIMER_STOP = 'heist-game/app/TIMER_STOP'
+export const DISABLE_GETAWAY_BUTTON = 'heist-game/app/DISABLE_GETAWAY_BUTTON'
 
 const tenMinutes = 60 * 10
 
@@ -29,7 +30,7 @@ const initialState = {
     pausedAt: null,
     complete: false
   },
-  heist: {label: "START HEIST"},
+  heist: {label: "START HEIST", disabled: null},
   getaway: {label: "START GETAWAY"},
   loading: false,
   phase: null,
@@ -164,7 +165,8 @@ export default function reducer(state = initialState, action) {
       }
       // going from heist to getaway
       if (state.phase === 'HEIST' && action.phase === 'GETAWAY') {
-
+        console.log("Switching from heist to getaway")
+        state = Object.assign(state, {getaway: {label: "PAUSE"}})
       }
       return {
         ...state, timer: {
@@ -174,6 +176,10 @@ export default function reducer(state = initialState, action) {
           runUntil: tenMinutes,
         }, startCountdownPressed: true,
         phase: action.phase
+      }
+    case DISABLE_GETAWAY_BUTTON:
+      return {
+          ...state, heist: {label: 'GETAWAY IN PROGRESS', disabled: true}
       }
     default:
       return {
@@ -230,6 +236,12 @@ export function pauseTimer(phase = null) {
   return {
     type: TIMER_PAUSE,
     phase: phase
+  }
+}
+
+export function disableGetawayButton() {
+  return {
+    type: DISABLE_GETAWAY_BUTTON
   }
 }
 

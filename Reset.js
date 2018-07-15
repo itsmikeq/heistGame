@@ -27,12 +27,9 @@ class Reset extends React.Component {
         <View style={styles.buttonWrapper}>
           <Button
               onPress={this.reset.bind(this)}
-              style={{width: 370}}
-              borderRadius={10}
-              title="reset"
-              label="RESET"
+              style={styles.button}
               color="#1D292F"
-          />
+          ><Text style={styles.text}>RESET</Text></Button>
         </View>
     )
   }
@@ -43,8 +40,17 @@ const styles = StyleSheet.create({
     height: 40,
     backgroundColor: '#1D292F',
   },
+  button: {
+    width: 370,
+    backgroundColor: '#1D292F',
+    borderRadius: 0,
+  },
   buttonWrapper: {
     marginTop: 50,
+  },
+  text: {
+    color: '#fff',
+    textAlign: 'center',
   },
 })
 

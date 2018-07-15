@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {StyleSheet, Text, View} from 'react-native'
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native'
 import {Button} from 'react-native-common'
 import {initTimer, startTimer, pauseTimer, continueTimer, timerTick, timerStop} from './Reducer'
 import {connect} from 'react-redux'
@@ -43,15 +43,14 @@ class Heist extends React.Component {
 
   render() {
     return (
-        <View style={styles.buttonWrapper}>
+        <View style={this.props.heist.disabled ? styles.buttonWrapperDisabled : styles.buttonWrapper}>
           <Button
               onPress={this.handleStartStop.bind(this)}
-              style={{width: 370}}
-              borderRadius={10}
-              title="heist button"
-              label={this.props.heist.label}
-              color="#1D292F"
-          />
+              style={this.props.heist.disabled ? styles.buttonDisabled : styles.button}
+              disabled={this.props.heist.disabled}
+          >
+            <Text style={styles.text}>{this.props.heist.label}</Text>
+          </Button>
         </View>
     )
   }
@@ -59,11 +58,37 @@ class Heist extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: 40,
+    flex: 1
+  },
+  button: {
+    width: 370,
     backgroundColor: '#1D292F',
+    borderRadius: 0,
+  },
+  buttonDisabled: {
+    width: 370,
+    backgroundColor: '#364d58',
+    borderRadius: 0,
+  },
+  text: {
+    color: '#fff',
+    textAlign: 'center',
   },
   buttonWrapper: {
+    backgroundColor: '#1D292F',
+    height: 70,
+    justifyContent: 'center',
+    alignItems: 'center',
     marginTop: 50,
+    flexDirection: 'row',
+  },
+  buttonWrapperDisabled: {
+    backgroundColor: '#364d58',
+    height: 70,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 50,
+    flexDirection: 'row',
   },
 })
 
