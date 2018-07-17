@@ -14,7 +14,7 @@ import Reset from './Reset'
 const store = createStore(reducer)
 
 function timerReset() {
-  console.log("Hit reset")
+  console.debug("Hit reset")
 }
 
 export default class App extends React.Component {

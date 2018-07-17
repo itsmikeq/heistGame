@@ -7,8 +7,9 @@ import {connect} from 'react-redux'
 class Getaway extends Component {
 
   componentWillMount() {
-    console.log(this.props)
-    this.props.initTimer()
+    console.debug("Mounting")
+    console.debug(this.props)
+    // this.props.initTimer()
   }
 
   componentDidMount() {
@@ -22,20 +23,20 @@ class Getaway extends Component {
       // Do not return here, so the rest of the logic continues
     }
 
+    // pause button
     if (this.props.timer.running && this.props.phase === 'GETAWAY') {
-      console.log("Running, Clearing interval")
+      console.debug("Running, Clearing interval")
       clearInterval(this.interval)
       // should be in an action...
       this.props.pauseTimer('GETAWAY')
-      // this.setState({timer: {labelHeist: "PAUSED"}})
       return
     }
+    // restart
     if (this.props.timer.paused) {
       this.props.continueTimer('GETAWAY')
-      // this.setState({timer: {labelHeist: "RUNNING"}})
-    } else {
+      this.props.timerTick()
+    } else if (this.props.timer.running){
       // case 2 - start button clicked
-      // this.setState({timer: {labelHeist: "RUNNING"}})
       this.props.startTimer('GETAWAY')
       this.props.timerTick()
     }
@@ -49,14 +50,6 @@ class Getaway extends Component {
     }, 1000)
   }
 
-// <View style={styles.buttonWrapper}>
-// <TouchableHighlight onPress={this.handleStartStop.bind(this)} style={styles.button}
-// hitSlop={{top: 20, bottom: 20, left: 50, right: 50}}>
-// <View>
-// <Text style={styles.text}>{this.props.getaway.label}</Text>
-// </View>
-// </TouchableHighlight>
-// </View>
   render() {
     return (
         <View style={styles.buttonWrapper}>

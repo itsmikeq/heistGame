@@ -19,15 +19,14 @@ class Heist extends React.Component {
       clearInterval(this.interval)
       // should be in an action...
       this.props.pauseTimer()
-      // this.setState({timer: {labelHeist: "PAUSED"}})
       return
     }
     if (this.props.timer.paused) {
+      // pause button hit
       this.props.continueTimer()
-      // this.setState({timer: {labelHeist: "RUNNING"}})
+      this.props.timerTick()
     } else {
       // case 2 - start button clicked
-      // this.setState({timer: {labelHeist: "RUNNING"}})
       this.props.startTimer()
       this.props.timerTick()
     }

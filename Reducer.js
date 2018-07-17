@@ -38,11 +38,11 @@ const initialState = {
 
 const sound = new Sound('bb_king_lucille.mp3', Sound.MAIN_BUNDLE, (error) => {
   if (error) {
-    console.log('failed to load the sound', error)
+    console.debug('failed to load the sound', error)
     return null
   }
   // loaded successfully
-  console.log('duration in seconds: ' + sound.getDuration() + 'number of channels: ' + sound.getNumberOfChannels())
+  console.debug('duration in seconds: ' + sound.getDuration() + 'number of channels: ' + sound.getNumberOfChannels())
 })
 
 export function calculateDate(futureDate = new Date(), currentDate = new Date()) {
@@ -53,16 +53,16 @@ export function calculateDate(futureDate = new Date(), currentDate = new Date())
 function timerSounds(timeCode) {
   switch (timeCode) {
     case "00:60":
-      console.log("6 minutes left")
+      console.debug("6 minutes left")
       return
     case "00:50":
-      console.log("5 minutes left")
+      console.debug("5 minutes left")
       return
     case "00:40":
-      console.log("4 minutes left")
+      console.debug("4 minutes left")
       return
     case "00:20":
-      console.log("2 minutes left")
+      console.debug("2 minutes left")
       return
     default:
       return
@@ -124,8 +124,8 @@ export default function reducer(state = initialState, action) {
     case TIMER_TICK:
       // Remaining is what is used to display the remaining time
       const remaining = calculateDate(state.timer.runUntil, now)
-      console.log("Remaining", remaining)
-      sound.getCurrentTime((seconds) => console.log('at ' + seconds))
+      console.debug("Remaining", remaining)
+      sound.getCurrentTime((seconds) => console.debug('at ' + seconds))
 
       timerSounds(remaining)
       if (state.timer.runUntil >= now) {
@@ -165,8 +165,14 @@ export default function reducer(state = initialState, action) {
       }
       // going from heist to getaway
       if (state.phase === 'HEIST' && action.phase === 'GETAWAY') {
-        console.log("Switching from heist to getaway")
+        console.debug("Switching from heist to getaway")
         state = Object.assign(state, {getaway: {label: "PAUSE"}})
+        // return with only the phase having changed
+        // so we dont reset the timer
+        return {
+          ...state,
+          phase: action.phase
+        }
       }
       return {
         ...state, timer: {
@@ -179,7 +185,7 @@ export default function reducer(state = initialState, action) {
       }
     case DISABLE_GETAWAY_BUTTON:
       return {
-          ...state, heist: {label: 'GETAWAY IN PROGRESS', disabled: true}
+        ...state, heist: {label: 'GETAWAY IN PROGRESS', disabled: true}
       }
     default:
       return {
@@ -189,7 +195,7 @@ export default function reducer(state = initialState, action) {
   }
 }
 
-export function timerTick(timeLeft) {
+export function timerTick() {
   return {
     type: TIMER_TICK
   }
