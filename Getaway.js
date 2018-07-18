@@ -34,12 +34,11 @@ class Getaway extends Component {
     // restart
     if (this.props.timer.paused) {
       this.props.continueTimer('GETAWAY')
-      this.props.timerTick()
     } else if (this.props.timer.running){
       // case 2 - start button clicked
       this.props.startTimer('GETAWAY')
-      this.props.timerTick()
     }
+      this.props.timerTick()
 
     this.interval = setInterval(() => {
       if (!this.props.timer.running) {

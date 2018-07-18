@@ -24,12 +24,11 @@ class Heist extends React.Component {
     if (this.props.timer.paused) {
       // pause button hit
       this.props.continueTimer()
-      this.props.timerTick()
     } else {
       // case 2 - start button clicked
       this.props.startTimer()
-      this.props.timerTick()
     }
+      this.props.timerTick()
 
     this.interval = setInterval(() => {
       if (!this.props.timer.running) {
